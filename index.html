@@ -1,951 +1,832 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Saravana Devaraj · Release & Delivery Manager Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Release Manager, Project Manager, Delivery Manager, and Scrum Master leading India-scale digital programs with 2M+ DAU, 98% deployment success, and zero critical incidents."
-  />
-
-  <style>
-    :root {
-      --navy: #0b1020;
-      --navy-soft: #151a2b;
-      --teal: #1fb9a5;
-      --gold: #f2c14f;
-      --rose: #f27d92;
-      --text-main: #f7f8fc;
-      --text-muted: #a5afc5;
-      --card-bg: #151a2b;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: radial-gradient(circle at top, #161a2b, #050711);
-      color: var(--text-main);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    main {
-      min-height: 100vh;
-    }
-
-    .page-shell {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 7vw 4rem;
-    }
-
-    /* NAVBAR */
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(16px);
-      background: linear-gradient(
-        to bottom,
-        rgba(5, 7, 17, 0.92),
-        rgba(5, 7, 17, 0.7)
-      );
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .navbar-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0.7rem 7vw;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.88rem;
-    }
-
-    .brand-mark {
-      width: 28px;
-      height: 28px;
-      border-radius: 10px;
-      background: radial-gradient(circle at top left, var(--gold), var(--navy));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 0.9rem;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 0.05rem;
-    }
-
-    .brand-name {
-      font-weight: 600;
-    }
-
-    .brand-role {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.2rem;
-      font-size: 0.8rem;
-      color: var(--text-muted);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -0.2rem;
-      width: 0;
-      height: 2px;
-      border-radius: 99px;
-      background: linear-gradient(90deg, var(--teal), var(--gold));
-      transition: width 180ms ease-out;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: calc(100vh - 56px);
-      display: flex;
-      align-items: center;
-      padding: 3.5rem 7vw 3rem;
-      background: linear-gradient(
-        135deg,
-        var(--navy) 0%,
-        #050711 55%,
-        #0c1924 100%
-      );
-      animation: heroFadeIn 600ms ease-out 60ms both;
-    }
-
-    @keyframes heroFadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .hero-inner {
-      max-width: 1180px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .hero-kicker {
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      font-size: 0.78rem;
-      color: var(--teal);
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.4rem, 3vw, 3rem);
-      line-height: 1.15;
-      margin: 0 0 0.75rem;
-    }
-
-    .hero h1 .accent {
-      color: var(--gold);
-    }
-
-    .hero-subtitle {
-      font-size: 0.98rem;
-      color: var(--text-muted);
-      max-width: 34rem;
-      line-height: 1.6;
-      margin-bottom: 1.8rem;
-    }
-
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.9rem;
-      margin-bottom: 1.8rem;
-    }
-
-    .metric-card {
-      position: relative;
-      border-radius: var(--radius-md);
-      background: linear-gradient(145deg, #151a2b, #090c16);
-      padding: 0.9rem 1rem;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-      overflow: hidden;
-    }
-
-    .metric-card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(
-        circle at top left,
-        rgba(242, 193, 79, 0.12),
-        transparent 55%
-      );
-      opacity: 0;
-      transition: opacity 220ms ease-out;
-    }
-
-    .metric-card:hover::after {
-      opacity: 1;
-    }
-
-    .metric-value {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: var(--teal);
-      margin-bottom: 0.1rem;
-    }
-
-    .metric-label {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.65rem 1.2rem;
-      border-radius: 999px;
-      font-size: 0.86rem;
-      font-weight: 600;
-      border: 1px solid transparent;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .btn.primary {
-      background: linear-gradient(135deg, var(--teal), #30d1c0);
-      color: #050711;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-      transition: transform 160ms ease-out, box-shadow 160ms ease-out;
-    }
-
-    .btn.primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5);
-    }
-
-    .btn.ghost {
-      background: transparent;
-      color: var(--text-main);
-      border-color: var(--border-subtle);
-    }
-
-    .hero-meta {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    .hero-media {
-      display: flex;
-      justify-content: center;
-    }
-
-    .video-frame {
-      position: relative;
-      width: 100%;
-      max-width: 360px;
-      aspect-ratio: 4 / 5;
-      border-radius: var(--radius-lg);
-      background: radial-gradient(circle at top, #1e2539, #050711);
-      overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .hero-video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .video-overlay {
-      position: absolute;
-      left: 1rem;
-      bottom: 1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.35rem 0.7rem;
-      border-radius: 999px;
-      backdrop-filter: blur(12px);
-      background: rgba(5, 7, 17, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      font-size: 0.75rem;
-      color: var(--text-main);
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      background: var(--teal);
-      box-shadow: 0 0 0 6px rgba(31, 185, 165, 0.25);
-    }
-
-    .status-text {
-      white-space: nowrap;
-    }
-
-    /* SECTIONS */
-
-    .section {
-      margin-top: 3.5rem;
-    }
-
-    .section-header {
-      margin-bottom: 1.8rem;
-    }
-
-    .section-header h2 {
-      margin: 0 0 0.4rem;
-      font-size: 1.4rem;
-    }
-
-    .section-header p {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      max-width: 32rem;
-    }
-
-    /* EXPERIENCE */
-
-    .experience-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.6rem;
-    }
-
-    .experience-item {
-      background: radial-gradient(circle at top left, #181f35, #070915);
-      border-radius: var(--radius-md);
-      padding: 1.2rem 1.3rem;
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
-    }
-
-    .experience-item header {
-      margin-bottom: 0.6rem;
-    }
-
-    .experience-item h3 {
-      margin: 0 0 0.2rem;
-      font-size: 1rem;
-    }
-
-    .experience-meta {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-    }
-
-    .experience-item ul {
-      margin: 0.6rem 0 0;
-      padding-left: 1.1rem;
-      font-size: 0.9rem;
-      color: var(--text-main);
-    }
-
-    .experience-item li + li {
-      margin-top: 0.3rem;
-    }
-
-    /* HIGHLIGHTS */
-
-    .highlight-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .highlight-card {
-      background: radial-gradient(circle at top, #171e31, #070915);
-      border-radius: var(--radius-md);
-      padding: 1rem 1.1rem;
-      border: 1px solid var(--border-subtle);
-      font-size: 0.88rem;
-    }
-
-    .highlight-title {
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-
-    .highlight-meta {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 0.3rem;
-    }
-
-    /* SKILLS */
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-    }
-
-    .skills-group {
-      background: radial-gradient(circle at top, #171e31, #070915);
-      border-radius: var(--radius-md);
-      padding: 1rem 1.1rem;
-      border: 1px solid var(--border-subtle);
-      font-size: 0.86rem;
-    }
-
-    .skills-group h3 {
-      margin: 0 0 0.5rem;
-      font-size: 0.96rem;
-    }
-
-    .skills-group p {
-      margin: 0;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* EDUCATION & AWARDS */
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-      gap: 1.4rem;
-    }
-
-    .badge-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 0.4rem;
-    }
-
-    .badge {
-      font-size: 0.75rem;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-subtle);
-      background: rgba(15, 20, 40, 0.9);
-    }
-
-    /* CONTACT */
-
-    .contact-card {
-      background: radial-gradient(circle at top, #171e31, #070915);
-      border-radius: var(--radius-md);
-      padding: 1rem 1.1rem;
-      border: 1px solid var(--border-subtle);
-      font-size: 0.9rem;
-    }
-
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-      margin-top: 0.5rem;
-      font-size: 0.86rem;
-    }
-
-    .contact-label {
-      color: var(--text-muted);
-      min-width: 90px;
-    }
-
-    .contact-value a {
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
-    }
-
-    footer {
-      padding: 1.5rem 7vw 2rem;
-      font-size: 0.76rem;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
-      background: radial-gradient(circle at bottom, #0f1523, #050711);
-    }
-
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 2.2rem;
-      }
-
-      .hero-media {
-        order: -1;
-      }
-
-      .hero {
-        padding: 3rem 5vw 2.5rem;
-      }
-
-      .highlight-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .skills-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .two-col {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-metrics {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .navbar-inner {
-        padding-inline: 5vw;
-      }
-
-      .page-shell {
-        padding-inline: 5vw;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero-metrics {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header class="navbar">
-    <div class="navbar-inner">
-      <div class="brand">
-        <div class="brand-mark">S</div>
-        <div class="brand-text">
-          <span class="brand-name">Saravana Devaraj</span>
-          <span class="brand-role">Release · Delivery · Scrum</span>
-        </div>
-      </div>
-      <nav class="nav-links">
-        <a href="#experience">Experience</a>
-        <a href="#highlights">Highlights</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <div class="hero-text">
-          <p class="hero-kicker">Release Manager · Project Manager · Scrum Master</p>
-          <h1>Hi, I’m <span class="accent">Saravana Devaraj</span></h1>
-          <p class="hero-subtitle">
-            I lead delivery governance and releases for India‑scale digital
-            platforms, ensuring predictable sprints, zero‑surprise go‑lives,
-            and stakeholder‑ready reporting.
-          </p>
-
-          <div class="hero-metrics">
-            <div class="metric-card">
-              <div class="metric-value">2M+</div>
-              <div class="metric-label">Daily active users managed</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-value">98%</div>
-              <div class="metric-label">Deployment success rate</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-value">0</div>
-              <div class="metric-label">Critical production incidents</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-value">95%+</div>
-              <div class="metric-label">Stakeholder satisfaction</div>
-            </div>
-          </div>
-
-          <div class="hero-actions">
-            <a href="#experience" class="btn primary">View delivery experience</a>
-            <a href="#contact" class="btn ghost">Download resume (PDF)</a>
-          </div>
-
-          <div class="hero-meta">
-            Bangalore · Open to Release / Delivery / PM roles · Hybrid or Remote
-          </div>
-        </div>
-
-        <div class="hero-media">
-          <div class="video-frame">
-            <!-- Replace src with your exported animated banner:
-                 guy at computer -> turns to camera -> says hi -->
-            <video
-              class="hero-video"
-              src="assets/videos/saravana-hero.mp4"
-              autoplay
-              muted
-              loop
-              playsinline
-            ></video>
-
-            <div class="video-overlay">
-              <span class="status-dot"></span>
-              <span class="status-text">Available for opportunities</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="page-shell">
-      <section id="highlights" class="section">
-        <div class="section-header">
-          <h2>Program & Delivery Highlights</h2>
-          <p>
-            A snapshot of the platforms and outcomes I’ve delivered as Release,
-            Project, and Delivery Manager.
-          </p>
-        </div>
-
-        <div class="highlight-grid">
-          <article class="highlight-card">
-            <div class="highlight-title">Skill India Digital Hub (NSDC)</div>
-            <p>
-              Release Manager for a national skilling platform serving
-              2M+ daily active users with 98% deployment success and
-              zero critical production incidents.
-            </p>
-            <div class="highlight-meta">
-              Tarento Technologies · National program · 2024–2025
-            </div>
-          </article>
-
-          <article class="highlight-card">
-            <div class="highlight-title">iGOT Karmayogi Bharat</div>
-            <p>
-              Associate Project Lead improving sprint predictability by 35%
-              and on‑time releases by 40% through disciplined planning,
-              RAID management, and governance.
-            </p>
-            <div class="highlight-meta">
-              Tarento Technologies · Government platform · 2025–
-            </div>
-          </article>
-
-          <article class="highlight-card">
-            <div class="highlight-title">OLA Cabs · Strategic Research</div>
-            <p>
-              Coordinated pricing and competitive intelligence research,
-              scaling from 10 cities to pan‑India and improving project
-              efficiency by 40%.
-            </p>
-            <div class="highlight-meta">
-              Tarento Technologies · Research program · 2022–2024
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="experience" class="section">
-        <div class="section-header">
-          <h2>Delivery & Release Experience</h2>
-          <p>
-            Leading multi‑vendor, India‑scale releases with structured
-            governance, sprint discipline, and executive‑ready reporting.
-          </p>
-        </div>
-
-        <div class="experience-list">
-          <article class="experience-item">
-            <header>
-              <h3>Associate Project Lead · Delivery & Release Manager</h3>
-              <div class="experience-meta">
-                <span>Tarento Technologies · SIDH & iGOT Karmayogi Bharat</span>
-                <span>Mar 2025 – Present · Bangalore</span>
-              </div>
-            </header>
-            <ul>
-              <li>
-                Own end‑to‑end delivery coordination for iGOT Karmayogi Bharat,
-                aligning multiple pods, vendors, and stakeholders across a
-                national digital program.
-              </li>
-              <li>
-                Improved sprint predictability by 35% and on‑time releases by
-                40% through disciplined planning, RAID tracking, and
-                follow‑through.
-              </li>
-              <li>
-                Maintain release readiness via governance checkpoints,
-                dependency management, and transparent status reporting.
-              </li>
-              <li>
-                Build executive dashboards and health reports, reducing decision
-                turnaround time by 25%.
-              </li>
-            </ul>
-          </article>
-
-          <article class="experience-item">
-            <header>
-              <h3>Senior Project Associate · Release Manager</h3>
-              <div class="experience-meta">
-                <span>Tarento Technologies · Skill India Digital Hub (NSDC)</span>
-                <span>Dec 2024 – Feb 2025 · Bangalore</span>
-              </div>
-            </header>
-            <ul>
-              <li>
-                Led releases for Skill India Digital Hub serving 2M+ daily
-                users with 98% deployment success and zero critical
-                production incidents.
-              </li>
-              <li>
-                Managed a 200+ member multi‑vendor ecosystem with release
-                calendars and CCB governance.
-              </li>
-              <li>
-                Partnered with Cloud & DevOps teams on AWS/Azure CI/CD
-                pipelines, cutting unplanned downtime by 30%.
-              </li>
-              <li>
-                Established structured dependency and risk management to
-                keep high‑priority releases on track.
-              </li>
-            </ul>
-          </article>
-
-          <article class="experience-item">
-            <header>
-              <h3>Project Coordinator · Research & Delivery</h3>
-              <div class="experience-meta">
-                <span>Tarento Technologies · OLA Cabs – Strategic Research</span>
-                <span>Oct 2022 – Dec 2024 · Bangalore</span>
-              </div>
-            </header>
-            <ul>
-              <li>
-                Coordinated pricing and competitive intelligence research across
-                10 cities, later scaled pan‑India to support revenue strategy.
-              </li>
-              <li>
-                Managed data collection, quality checks, and reporting cadences
-                for leadership.
-              </li>
-              <li>
-                Built research frameworks and dashboards, improving project
-                efficiency by 40%.
-              </li>
-            </ul>
-          </article>
-
-          <article class="experience-item">
-            <header>
-              <h3>Advisory & Implementation Associate</h3>
-              <div class="experience-meta">
-                <span>Maistering B.V. · Master Collections (SaaS)</span>
-                <span>Sep 2021 – Oct 2022 · Bangalore</span>
-              </div>
-            </header>
-            <ul>
-              <li>
-                Supported SaaS implementations and go‑lives through operational
-                dashboards, training materials, and change management
-                documentation.
-              </li>
-              <li>
-                Assisted with deployment planning, production support, and
-                customer onboarding for global clients.
-              </li>
-              <li>
-                Improved visibility and adoption via structured reporting and
-                process documentation.
-              </li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section id="skills" class="section">
-        <div class="section-header">
-          <h2>Delivery, Agile & Tools</h2>
-          <p>
-            A blend of governance, execution, and tooling for predictable,
-            low‑risk releases.
-          </p>
-        </div>
-
-        <div class="skills-grid">
-          <div class="skills-group">
-            <h3>Delivery & Governance</h3>
-            <p>
-              Release Management · Delivery Governance · Change Management / CCB ·
-              Risk & RAID Log Management · Go‑Live Management · Incident Management ·
-              Production Support · Dependency Management · Budget & Billing Support
-            </p>
-          </div>
-          <div class="skills-group">
-            <h3>Agile & Project Management</h3>
-            <p>
-              Scrum Mastery · Sprint Planning & Execution · Capacity Planning ·
-              Resource Allocation · Stakeholder Management · Training Coordination ·
-              Documentation Management · Reporting Cadence Design
-            </p>
-          </div>
-          <div class="skills-group">
-            <h3>Tools & Analytics</h3>
-            <p>
-              Jira Administration · Confluence · Azure DevOps · MS Excel · Power BI ·
-              CI/CD & DevOps Collaboration · Dashboard Reporting · Data‑driven
-              status storytelling
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="education" class="section">
-        <div class="section-header">
-          <h2>Education, Certifications & Awards</h2>
-          <p>
-            Business analytics foundation, engineering background, and continuous
-            learning in agile and DevOps.
-          </p>
-        </div>
-
-        <div class="two-col">
-          <div>
-            <h3>Education</h3>
-            <p>
-              <strong>MBA – Business Analytics</strong><br />
-              MS Ramaiah University · 2021
-            </p>
-            <p>
-              <strong>B.E. – Mechanical / AI Engineering</strong><br />
-              NCET (VTU) · 2019
-            </p>
-          </div>
-
-          <div>
-            <h3>Certifications & Awards</h3>
-            <div class="badge-list">
-              <span class="badge">PMI‑ACP (in progress)</span>
-              <span class="badge">Planning & Releasing Software with JIRA</span>
-              <span class="badge">DevOps Management Foundations</span>
-              <span class="badge">Strategic Planning Foundations</span>
-              <span class="badge">Synergy Award (x1)</span>
-              <span class="badge">Quarterly Delivery Awards (x3)</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section">
-        <div class="section-header">
-          <h2>Contact & Resume</h2>
-          <p>
-            Best reached via email or LinkedIn. I’m open to Release, Delivery,
-            and Project Management roles in India and remote.
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-row">
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Bangalore, India</div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-label">Phone</div>
-            <div class="contact-value">+91‑7019156599</div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-label">Email</div>
-            <div class="contact-value">
-              <a href="mailto:sarostaying@gmail.com">sarostaying@gmail.com</a>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-value">
-              <a href="https://www.linkedin.com/in/saravana-devaraju" target="_blank" rel="noreferrer">
-                linkedin.com/in/saravana-devaraju
-              </a>
-            </div>
-          </div>
-          <div class="contact-row">
-            <div class="contact-label">Resume</div>
-            <div class="contact-value">
-              <!-- Update href with your PDF path in GitHub Pages or your host -->
-              <a href="assets/resume/Saravana-Resume.pdf" target="_blank" rel="noreferrer">
-                Download latest resume (PDF)
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    Built by Saravana using Git and a lightweight HTML/CSS setup. Last updated 2026.
-  </footer>
-</body>
-</html>
+ <meta charset="UTF-8" />
+ <title>Saravana Devaraj · Release & Delivery Manager Portfolio</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta
+ name="description"
+ content="Release Manager, Project Manager, Delivery Manager, and Scrum Master leading India-scale digital programs with 2M+ DAU, 98% deployment success, and zero critical incidents."
+ />
+ <style>
+ :root {
+ --navy: #0b1020;
+ --navy-soft: #151a2b;
+ --teal: #1fb9a5;
+ --gold: #f2c14f;
+ --rose: #f27d92;
+ --text-main: #f7f8fc;
+ --text-muted: #a5afc5;
+ --card-bg: #151a2b;
+ --border-subtle: rgba(255, 255, 255, 0.08);
+ --radius-lg: 18px;
+ --radius-md: 12px;
+ --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.45);
+ }
+ * {
+ box-sizing: border-box;
+ }
+ body {
+ margin: 0;
+ background: radial-gradient(circle at top, #161a2b, #050711);
+ color: var(--text-main);
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+ sans-serif;
+ -webkit-font-smoothing: antialiased;
+ }
+ a {
+ color: inherit;
+ }
+ main {
+ min-height: 100vh;
+ }
+ .page-shell {
+ max-width: 1180px;
+ margin: 0 auto;
+ padding: 0 7vw 4rem;
+ }
+ /* NAVBAR */
+ .navbar {
+ position: sticky;
+ top: 0;
+ z-index: 10;
+ backdrop-filter: blur(16px);
+ background: linear-gradient(
+ to bottom,
+ rgba(5, 7, 17, 0.92),
+ rgba(5, 7, 17, 0.7)
+ );
+ border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+ }
+ .navbar-inner {
+ max-width: 1180px;
+ margin: 0 auto;
+ padding: 0.7rem 7vw;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ gap: 1rem;
+ }
+ .brand {
+ display: flex;
+ align-items: center;
+ gap: 0.6rem;
+ font-size: 0.88rem;
+ }
+ .brand-mark {
+ width: 28px;
+ height: 28px;
+ border-radius: 10px;
+ background: radial-gradient(circle at top left, var(--gold), var(--navy));
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 700;
+ font-size: 0.9rem;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+ }
+ .brand-text {
+ display: flex;
+ flex-direction: column;
+ gap: 0.05rem;
+ }
+ .brand-name {
+ font-weight: 600;
+ }
+ .brand-role {
+ font-size: 0.72rem;
+ color: var(--text-muted);
+ }
+ .nav-links {
+ display: flex;
+ gap: 1.2rem;
+ font-size: 0.8rem;
+ color: var(--text-muted);
+ }
+ .nav-links a {
+ text-decoration: none;
+ position: relative;
+ }
+ .nav-links a::after {
+ content: "";
+ position: absolute;
+ left: 0;
+ bottom: -0.2rem;
+ width: 0;
+ height: 2px;
+ border-radius: 99px;
+ background: linear-gradient(90deg, var(--teal), var(--gold));
+ transition: width 180ms ease-out;
+ }
+ .nav-links a:hover::after {
+ width: 100%;
+ }
+ /* HERO */
+ .hero {
+ min-height: calc(100vh - 56px);
+ display: flex;
+ align-items: center;
+ padding: 3.5rem 7vw 3rem;
+ background: linear-gradient(
+ 135deg,
+ var(--navy) 0%,
+ #050711 55%,
+ #0c1924 100%
+ );
+ animation: heroFadeIn 600ms ease-out 60ms both;
+ }
+ @keyframes heroFadeIn {
+ from {
+ opacity: 0;
+ transform: translateY(12px);
+ }
+ to {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ }
+ .hero-inner {
+ max-width: 1180px;
+ margin: 0 auto;
+ display: grid;
+ grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+ gap: 3rem;
+ align-items: center;
+ }
+ .hero-kicker {
+ letter-spacing: 0.14em;
+ text-transform: uppercase;
+ font-size: 0.78rem;
+ color: var(--teal);
+ font-weight: 600;
+ margin-bottom: 0.75rem;
+ }
+ .hero h1 {
+ font-size: clamp(2.4rem, 3vw, 3rem);
+ line-height: 1.15;
+ margin: 0 0 0.75rem;
+ }
+ .hero h1 .accent {
+ color: var(--gold);
+ }
+ .hero-subtitle {
+ font-size: 0.98rem;
+ color: var(--text-muted);
+ max-width: 34rem;
+ line-height: 1.6;
+ margin-bottom: 1.8rem;
+ }
+ .hero-metrics {
+ display: grid;
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ gap: 0.9rem;
+ margin-bottom: 1.8rem;
+ }
+ .metric-card {
+ position: relative;
+ border-radius: var(--radius-md);
+ background: linear-gradient(145deg, #151a2b, #090c16);
+ padding: 0.9rem 1rem;
+ border: 1px solid var(--border-subtle);
+ box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+ overflow: hidden;
+ }
+ .metric-card::after {
+ content: "";
+ position: absolute;
+ inset: 0;
+ background: radial-gradient(
+ circle at top left,
+ rgba(242, 193, 79, 0.12),
+ transparent 55%
+ );
+ opacity: 0;
+ transition: opacity 220ms ease-out;
+ }
+ .metric-card:hover::after {
+ opacity: 1;
+ }
+ .metric-value {
+ font-size: 1.3rem;
+ font-weight: 700;
+ color: var(--teal);
+ margin-bottom: 0.1rem;
+ }
+ .metric-label {
+ font-size: 0.78rem;
+ color: var(--text-muted);
+ }
+ .hero-actions {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.75rem;
+ margin-bottom: 1.2rem;
+ }
+ .btn {
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ padding: 0.65rem 1.2rem;
+ border-radius: 999px;
+ font-size: 0.86rem;
+ font-weight: 600;
+ border: 1px solid transparent;
+ text-decoration: none;
+ cursor: pointer;
+ }
+ .btn.primary {
+ background: linear-gradient(135deg, var(--teal), #30d1c0);
+ color: #050711;
+ box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+ transition: transform 160ms ease-out, box-shadow 160ms ease-out;
+ }
+ .btn.primary:hover {
+ transform: translateY(-1px);
+ box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5);
+ }
+ .btn.ghost {
+ background: transparent;
+ color: var(--text-main);
+ border-color: var(--border-subtle);
+ }
+ .hero-meta {
+ font-size: 0.78rem;
+ color: var(--text-muted);
+ }
+ .hero-media {
+ display: flex;
+ justify-content: center;
+ }
+ .hero-placeholder {
+ position: relative;
+ width: 100%;
+ max-width: 360px;
+ aspect-ratio: 4 / 5;
+ border-radius: var(--radius-lg);
+ background: radial-gradient(circle at top, #1e2539, #050711);
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ overflow: hidden;
+ box-shadow: var(--shadow-soft);
+ border: 1px solid rgba(255, 255, 255, 0.08);
+ }
+ .hero-initials {
+ font-size: clamp(4rem, 8vw, 7rem);
+ font-weight: 800;
+ background: linear-gradient(135deg, var(--gold), var(--teal));
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ background-clip: text;
+ opacity: 0.8;
+ }
+ .video-overlay {
+ position: absolute;
+ left: 1rem;
+ bottom: 1rem;
+ display: inline-flex;
+ align-items: center;
+ gap: 0.4rem;
+ padding: 0.35rem 0.7rem;
+ border-radius: 999px;
+ backdrop-filter: blur(12px);
+ background: rgba(5, 7, 17, 0.72);
+ border: 1px solid rgba(255, 255, 255, 0.06);
+ font-size: 0.75rem;
+ color: var(--text-main);
+ }
+ .status-dot {
+ width: 8px;
+ height: 8px;
+ border-radius: 999px;
+ background: var(--teal);
+ box-shadow: 0 0 0 6px rgba(31, 185, 165, 0.25);
+ }
+ .status-text {
+ white-space: nowrap;
+ }
+ /* SECTIONS */
+ .section {
+ margin-top: 3.5rem;
+ }
+ .section-header {
+ margin-bottom: 1.8rem;
+ }
+ .section-header h2 {
+ margin: 0 0 0.4rem;
+ font-size: 1.4rem;
+ }
+ .section-header p {
+ margin: 0;
+ color: var(--text-muted);
+ font-size: 0.92rem;
+ max-width: 32rem;
+ }
+ /* EXPERIENCE */
+ .experience-list {
+ display: flex;
+ flex-direction: column;
+ gap: 1.6rem;
+ }
+ .experience-item {
+ background: radial-gradient(circle at top left, #181f35, #070915);
+ border-radius: var(--radius-md);
+ padding: 1.2rem 1.3rem;
+ border: 1px solid var(--border-subtle);
+ box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
+ }
+ .experience-item header {
+ margin-bottom: 0.6rem;
+ }
+ .experience-item h3 {
+ margin: 0 0 0.2rem;
+ font-size: 1rem;
+ }
+ .experience-meta {
+ font-size: 0.78rem;
+ color: var(--text-muted);
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.6rem;
+ }
+ .experience-item ul {
+ margin: 0.6rem 0 0;
+ padding-left: 1.1rem;
+ font-size: 0.9rem;
+ color: var(--text-main);
+ }
+ .experience-item li + li {
+ margin-top: 0.3rem;
+ }
+ /* HIGHLIGHTS */
+ .highlight-grid {
+ display: grid;
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ gap: 1rem;
+ }
+ .highlight-card {
+ background: radial-gradient(circle at top, #171e31, #070915);
+ border-radius: var(--radius-md);
+ padding: 1rem 1.1rem;
+ border: 1px solid var(--border-subtle);
+ font-size: 0.88rem;
+ }
+ .highlight-title {
+ font-weight: 600;
+ margin-bottom: 0.4rem;
+ }
+ .highlight-meta {
+ font-size: 0.78rem;
+ color: var(--text-muted);
+ margin-top: 0.3rem;
+ }
+ /* SKILLS */
+ .skills-grid {
+ display: grid;
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ gap: 1rem;
+ }
+ .skills-group {
+ background: radial-gradient(circle at top, #171e31, #070915);
+ border-radius: var(--radius-md);
+ padding: 1rem 1.1rem;
+ border: 1px solid var(--border-subtle);
+ font-size: 0.86rem;
+ }
+ .skills-group h3 {
+ margin: 0 0 0.5rem;
+ font-size: 0.96rem;
+ }
+ .skills-group p {
+ margin: 0;
+ color: var(--text-muted);
+ line-height: 1.5;
+ }
+ /* EDUCATION & AWARDS */
+ .two-col {
+ display: grid;
+ grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+ gap: 1.4rem;
+ }
+ .badge-list {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.5rem;
+ margin-top: 0.4rem;
+ }
+ .badge {
+ font-size: 0.75rem;
+ padding: 0.25rem 0.65rem;
+ border-radius: 999px;
+ border: 1px solid var(--border-subtle);
+ background: rgba(15, 20, 40, 0.9);
+ }
+ /* CONTACT */
+ .contact-card {
+ background: radial-gradient(circle at top, #171e31, #070915);
+ border-radius: var(--radius-md);
+ padding: 1rem 1.1rem;
+ border: 1px solid var(--border-subtle);
+ font-size: 0.9rem;
+ }
+ .contact-row {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.7rem;
+ margin-top: 0.5rem;
+ font-size: 0.86rem;
+ }
+ .contact-label {
+ color: var(--text-muted);
+ min-width: 90px;
+ }
+ .contact-value a {
+ text-decoration: none;
+ border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+ }
+ footer {
+ padding: 1.5rem 7vw 2rem;
+ font-size: 0.76rem;
+ color: var(--text-muted);
+ border-top: 1px solid rgba(255, 255, 255, 0.05);
+ background: radial-gradient(circle at bottom, #0f1523, #050711);
+ }
+ @media (max-width: 900px) {
+ .hero-inner {
+ grid-template-columns: minmax(0, 1fr);
+ gap: 2.2rem;
+ }
+ .hero-media {
+ order: -1;
+ }
+ .hero {
+ padding: 3rem 5vw 2.5rem;
+ }
+ .highlight-grid {
+ grid-template-columns: minmax(0, 1fr);
+ }
+ .skills-grid {
+ grid-template-columns: minmax(0, 1fr);
+ }
+ .two-col {
+ grid-template-columns: minmax(0, 1fr);
+ }
+ .hero-metrics {
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+ }
+ .navbar-inner {
+ padding-inline: 5vw;
+ }
+ .page-shell {
+ padding-inline: 5vw;
+ }
+ }
+ @media (max-width: 640px) {
+ .hero-metrics {
+ grid-template-columns: minmax(0, 1fr);
+ }
+ .nav-links {
+ display: none;
+ }
+ }
+ </style></head><body>
+ <header class="navbar">
+ <div class="navbar-inner">
+ <div class="brand">
+ <div class="brand-mark">S</div>
+ <div class="brand-text">
+ <span class="brand-name">Saravana Devaraj</span>
+ <span class="brand-role">Release · Delivery · Scrum</span>
+ </div>
+ </div>
+ <nav class="nav-links">
+ <a href="#experience">Experience</a>
+ <a href="#highlights">Highlights</a>
+ <a href="#skills">Skills</a>
+ <a href="#education">Education</a>
+ <a href="#contact">Contact</a>
+ </nav>
+ </div>
+ </header>
+ <main>
+ <section class="hero" id="top">
+ <div class="hero-inner">
+ <div class="hero-text">
+ <p class="hero-kicker">Release Manager · Project Manager · Scrum Master</p>
+ <h1>Hi, I'm <span class="accent">Saravana Devaraj</span></h1>
+ <p class="hero-subtitle">
+ I lead delivery governance and releases for India‑scale digital
+ platforms, ensuring predictable sprints, zero‑surprise go‑lives,
+ and stakeholder‑ready reporting.
+ </p>
+ <div class="hero-metrics">
+ <div class="metric-card">
+ <div class="metric-value">2M+</div>
+ <div class="metric-label">Daily active users managed</div>
+ </div>
+ <div class="metric-card">
+ <div class="metric-value">98%</div>
+ <div class="metric-label">Deployment success rate</div>
+ </div>
+ <div class="metric-card">
+ <div class="metric-value">0</div>
+ <div class="metric-label">Critical production incidents</div>
+ </div>
+ <div class="metric-card">
+ <div class="metric-value">95%+</div>
+ <div class="metric-label">Stakeholder satisfaction</div>
+ </div>
+ </div>
+ <div class="hero-actions">
+ <a href="#experience" class="btn primary">View delivery experience</a>
+ <a href="https://www.linkedin.com/in/saravana-devaraju" target="_blank" rel="noreferrer" class="btn ghost">View on LinkedIn</a>
+ </div>
+ <div class="hero-meta">
+ Bangalore · Open to Release / Delivery / PM roles · Hybrid or Remote
+ </div>
+ </div>
+ <div class="hero-media">
+ <div class="hero-placeholder">
+ <span class="hero-initials">SD</span>
+ <div class="video-overlay">
+ <span class="status-dot"></span>
+ <span class="status-text">Available for opportunities</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+ <div class="page-shell">
+ <section id="highlights" class="section">
+ <div class="section-header">
+ <h2>Program & Delivery Highlights</h2>
+ <p>
+ A snapshot of the platforms and outcomes I've delivered as Release,
+ Project, and Delivery Manager.
+ </p>
+ </div>
+ <div class="highlight-grid">
+ <article class="highlight-card">
+ <div class="highlight-title">Skill India Digital Hub (NSDC)</div>
+ <p>
+ Release Manager for a national skilling platform serving
+ 2M+ daily active users with 98% deployment success and
+ zero critical production incidents.
+ </p>
+ <div class="highlight-meta">
+ Tarento Technologies · National program · 2024–2025
+ </div>
+ </article>
+ <article class="highlight-card">
+ <div class="highlight-title">iGOT Karmayogi Bharat</div>
+ <p>
+ Associate Project Lead improving sprint predictability by 35%
+ and on‑time releases by 40% through disciplined planning,
+ RAID management, and governance.
+ </p>
+ <div class="highlight-meta">
+ Tarento Technologies · Government platform · 2025–
+ </div>
+ </article>
+ <article class="highlight-card">
+ <div class="highlight-title">OLA Cabs · Strategic Research</div>
+ <p>
+ Coordinated pricing and competitive intelligence research,
+ scaling from 10 cities to pan‑India and improving project
+ efficiency by 40%.
+ </p>
+ <div class="highlight-meta">
+ Tarento Technologies · Research program · 2022–2024
+ </div>
+ </article>
+ </div>
+ </section>
+ <section id="experience" class="section">
+ <div class="section-header">
+ <h2>Delivery & Release Experience</h2>
+ <p>
+ Leading multi‑vendor, India‑scale releases with structured
+ governance, sprint discipline, and executive‑ready reporting.
+ </p>
+ </div>
+ <div class="experience-list">
+ <article class="experience-item">
+ <header>
+ <h3>Associate Project Lead · Delivery & Release Manager</h3>
+ <div class="experience-meta">
+ <span>Tarento Technologies · SIDH & iGOT Karmayogi Bharat</span>
+ <span>Mar 2025 – Present · Bangalore</span>
+ </div>
+ </header>
+ <ul>
+ <li>
+ Own end‑to‑end delivery coordination for iGOT Karmayogi Bharat,
+ aligning multiple pods, vendors, and stakeholders across a
+ national digital program.
+ </li>
+ <li>
+ Improved sprint predictability by 35% and on‑time releases by
+ 40% through disciplined planning, RAID tracking, and
+ follow‑through.
+ </li>
+ <li>
+ Maintain release readiness via governance checkpoints,
+ dependency management, and transparent status reporting.
+ </li>
+ <li>
+ Build executive dashboards and health reports, reducing decision
+ turnaround time by 25%.
+ </li>
+ </ul>
+ </article>
+ <article class="experience-item">
+ <header>
+ <h3>Senior Project Associate · Release Manager</h3>
+ <div class="experience-meta">
+ <span>Tarento Technologies · Skill India Digital Hub (NSDC)</span>
+ <span>Dec 2024 – Feb 2025 · Bangalore</span>
+ </div>
+ </header>
+ <ul>
+ <li>
+ Led releases for Skill India Digital Hub serving 2M+ daily
+ users with 98% deployment success and zero critical
+ production incidents.
+ </li>
+ <li>
+ Managed a 200+ member multi‑vendor ecosystem with release
+ calendars and CCB governance.
+ </li>
+ <li>
+ Partnered with Cloud & DevOps teams on AWS/Azure CI/CD
+ pipelines, cutting unplanned downtime by 30%.
+ </li>
+ <li>
+ Established structured dependency and risk management to
+ keep high‑priority releases on track.
+ </li>
+ </ul>
+ </article>
+ <article class="experience-item">
+ <header>
+ <h3>Project Coordinator · Research & Delivery</h3>
+ <div class="experience-meta">
+ <span>Tarento Technologies · OLA Cabs – Strategic Research</span>
+ <span>Oct 2022 – Dec 2024 · Bangalore</span>
+ </div>
+ </header>
+ <ul>
+ <li>
+ Coordinated pricing and competitive intelligence research across
+ 10 cities, later scaled pan‑India to support revenue strategy.
+ </li>
+ <li>
+ Managed data collection, quality checks, and reporting cadences
+ for leadership.
+ </li>
+ <li>
+ Built research frameworks and dashboards, improving project
+ efficiency by 40%.
+ </li>
+ </ul>
+ </article>
+ <article class="experience-item">
+ <header>
+ <h3>Advisory & Implementation Associate</h3>
+ <div class="experience-meta">
+ <span>Maistering B.V. · Master Collections (SaaS)</span>
+ <span>Sep 2021 – Oct 2022 · Bangalore</span>
+ </div>
+ </header>
+ <ul>
+ <li>
+ Supported SaaS implementations and go‑lives through operational
+ dashboards, training materials, and change management
+ documentation.
+ </li>
+ <li>
+ Assisted with deployment planning, production support, and
+ customer onboarding for global clients.
+ </li>
+ <li>
+ Improved visibility and adoption via structured reporting and
+ process documentation.
+ </li>
+ </ul>
+ </article>
+ </div>
+ </section>
+ <section id="skills" class="section">
+ <div class="section-header">
+ <h2>Delivery, Agile & Tools</h2>
+ <p>
+ A blend of governance, execution, and tooling for predictable,
+ low‑risk releases.
+ </p>
+ </div>
+ <div class="skills-grid">
+ <div class="skills-group">
+ <h3>Delivery & Governance</h3>
+ <p>
+ Release Management · Delivery Governance · Change Management / CCB ·
+ Risk & RAID Log Management · Go‑Live Management · Incident Management ·
+ Production Support · Dependency Management · Budget & Billing Support
+ </p>
+ </div>
+ <div class="skills-group">
+ <h3>Agile & Project Management</h3>
+ <p>
+ Scrum Mastery · Sprint Planning & Execution · Capacity Planning ·
+ Resource Allocation · Stakeholder Management · Training Coordination ·
+ Documentation Management · Reporting Cadence Design
+ </p>
+ </div>
+ <div class="skills-group">
+ <h3>Tools & Analytics</h3>
+ <p>
+ Jira Administration · Confluence · Azure DevOps · MS Excel · Power BI ·
+ CI/CD & DevOps Collaboration · Dashboard Reporting · Data‑driven
+ status storytelling
+ </p>
+ </div>
+ </div>
+ </section>
+ <section id="education" class="section">
+ <div class="section-header">
+ <h2>Education, Certifications & Awards</h2>
+ <p>
+ Business analytics foundation, engineering background, and continuous
+ learning in agile and DevOps.
+ </p>
+ </div>
+ <div class="two-col">
+ <div>
+ <h3>Education</h3>
+ <p>
+ <strong>MBA – Business Analytics</strong><br />
+ MS Ramaiah University · 2021
+ </p>
+ <p>
+ <strong>B.E. – Mechanical / AI Engineering</strong><br />
+ NCET (VTU) · 2019
+ </p>
+ </div>
+ <div>
+ <h3>Certifications & Awards</h3>
+ <div class="badge-list">
+ <span class="badge">PMI‑ACP (in progress)</span>
+ <span class="badge">Planning & Releasing Software with JIRA</span>
+ <span class="badge">DevOps Management Foundations</span>
+ <span class="badge">Strategic Planning Foundations</span>
+ <span class="badge">Synergy Award (x1)</span>
+ <span class="badge">Quarterly Delivery Awards (x3)</span>
+ </div>
+ </div>
+ </div>
+ </section>
+ <section id="contact" class="section">
+ <div class="section-header">
+ <h2>Contact & Resume</h2>
+ <p>
+ Best reached via email or LinkedIn. I'm open to Release, Delivery,
+ and Project Management roles in India and remote.
+ </p>
+ </div>
+ <div class="contact-card">
+ <div class="contact-row">
+ <div class="contact-label">Location</div>
+ <div class="contact-value">Bangalore, India</div>
+ </div>
+ <div class="contact-row">
+ <div class="contact-label">Phone</div>
+ <div class="contact-value">+91‑7019156599</div>
+ </div>
+ <div class="contact-row">
+ <div class="contact-label">Email</div>
+ <div class="contact-value">
+ <a href="mailto:sarostaying@gmail.com">sarostaying@gmail.com</a>
+ </div>
+ </div>
+ <div class="contact-row">
+ <div class="contact-label">LinkedIn</div>
+ <div class="contact-value">
+ <a href="https://www.linkedin.com/in/saravana-devaraju" target="_blank" rel="noreferrer">
+ linkedin.com/in/saravana-devaraju
+ </a>
+ </div>
+ </div>
+ <div class="contact-row">
+ <div class="contact-label">Resume</div>
+ <div class="contact-value">
+ <a href="https://www.linkedin.com/in/saravana-devaraju" target="_blank" rel="noreferrer">
+ View profile for resume (PDF)
+ </a>
+ </div>
+ </div>
+ </div>
+ </section>
+ </div>
+ </main>
+ <footer>
+ Built by Saravana using Git and a lightweight HTML/CSS setup. Last updated 2026.
+ </footer></body></html>
