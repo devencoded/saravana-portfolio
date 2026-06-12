@@ -276,11 +276,6 @@
       letter-spacing: 0.04em;
     }
 
-    .hero h1 .accent {
-      color: var(--gold);
-      position: relative;
-    }
-
     .hero-subtitle {
       font-size: 1rem;
       color: var(--text-muted);
@@ -1150,8 +1145,8 @@
           </div>
           <div class="hero-actions">
             <a href="#timeline" class="btn primary">Browse project timeline</a>
-            <a href="assets/resume/saravana-resume.pdf" download class="btn ghost">
-              Download resume (PDF)
+            <a href="assets/resume/Saravana%20may%2026.docx" download class="btn ghost">
+              Download resume (DOCX)
             </a>
           </div>
           <div class="hero-meta">
@@ -1165,7 +1160,6 @@
               <video
                 id="introVideo"
                 autoplay
-                loop
                 muted
                 playsinline
                 class="hero-video"
@@ -1348,7 +1342,7 @@
         </div>
       </section>
 
-      <!-- EXPERIENCE (clickable anchors for timeline cards) -->
+      <!-- EXPERIENCE -->
       <section id="experience" class="section">
         <div class="section-header">
           <h2>Delivery & release experience</h2>
@@ -1588,8 +1582,8 @@
           <div class="contact-row">
             <div class="contact-label">Resume</div>
             <div class="contact-value">
-              <a href="assets/resume/saravana-resume.pdf" download>
-                One‑click download (PDF)
+              <a href="assets/resume/Saravana%20may%2026.docx" download>
+                One‑click download (DOCX)
               </a>
             </div>
           </div>
@@ -1630,8 +1624,7 @@
 
     sections.forEach((section) => observer.observe(section));
 
-    // Unmute video on user interaction (required by autoplay policies)
-    // Video starts autoplay + muted; user can click button or video area to enable sound.[web:17][web:34][web:40]
+    // Unmute video and play ONCE with sound after user interaction (autoplay policies require click)[web:17][web:34][web:40]
     const introVideo = document.getElementById("introVideo");
     const unmuteBtn = document.getElementById("unmuteBtn");
     const statusText = document.getElementById("videoStatusText");
@@ -1639,13 +1632,14 @@
 
     function enableSound() {
       if (!introVideo) return;
+      introVideo.currentTime = 0; // start from beginning
       introVideo.muted = false;
       const playPromise = introVideo.play();
       if (playPromise && typeof playPromise.then === "function") {
         playPromise
           .then(() => {
             if (statusText) {
-              statusText.textContent = "Intro · Playing with sound";
+              statusText.textContent = "Intro · Playing with sound (once)";
             }
             if (unmuteBtn) {
               unmuteBtn.classList.add("is-hidden");
@@ -1659,7 +1653,7 @@
           });
       } else {
         if (statusText) {
-          statusText.textContent = "Intro · Playing with sound";
+          statusText.textContent = "Intro · Playing with sound (once)";
         }
         if (unmuteBtn) {
           unmuteBtn.classList.add("is-hidden");
@@ -1682,8 +1676,7 @@
       });
     }
 
-    // Simple skill-tag "filter" micro interaction:
-    // just toggles active state visually to feel like filters
+    // Simple skill-tag active state micro interaction
     const tags = document.querySelectorAll(".skill-tag");
     tags.forEach((tag) => {
       tag.addEventListener("click", () => {
