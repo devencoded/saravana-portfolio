@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Saravana Devaraj · Release & Delivery Manager Portfolio</title>
+  <title>Saravana Devaraj · Project Management & Release Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Release Manager, Project Manager, Delivery Manager, and Scrum Master leading India-scale digital programs with 2M+ DAU, 98% deployment success, and zero critical incidents."
+    content="Professional project management, release & delivery portfolio of Saravana Devaraj – Release Manager, Delivery Manager, Scrum Master, and research-driven PM for India-scale digital programs."
   />
   <style>
     :root {
@@ -47,9 +47,21 @@
       content: "";
       position: fixed;
       inset: -20%;
-      background: radial-gradient(circle at 0% 0%, rgba(242, 193, 79, 0.11), transparent 60%),
-        radial-gradient(circle at 100% 0%, rgba(31, 185, 165, 0.12), transparent 60%),
-        radial-gradient(circle at 50% 110%, rgba(242, 125, 146, 0.22), transparent 60%);
+      background: radial-gradient(
+          circle at 0% 0%,
+          rgba(242, 193, 79, 0.11),
+          transparent 60%
+        ),
+        radial-gradient(
+          circle at 100% 0%,
+          rgba(31, 185, 165, 0.12),
+          transparent 60%
+        ),
+        radial-gradient(
+          circle at 50% 110%,
+          rgba(242, 125, 146, 0.22),
+          transparent 60%
+        );
       filter: blur(2px);
       opacity: 0.9;
       z-index: -2;
@@ -77,6 +89,19 @@
       max-width: 1180px;
       margin: 0 auto;
       padding: 0 7vw 4rem;
+    }
+
+    /* Reading progress bar */
+    .reading-progress {
+      position: fixed;
+      inset-inline: 0;
+      top: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--teal), var(--gold));
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      z-index: 30;
+      pointer-events: none;
     }
 
     /* NAVBAR */
@@ -217,7 +242,11 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 0 100%, rgba(31, 185, 165, 0.13), transparent 60%);
+      background: radial-gradient(
+        circle at 0 100%,
+        rgba(31, 185, 165, 0.13),
+        transparent 60%
+      );
       mix-blend-mode: screen;
       opacity: 0.7;
       pointer-events: none;
@@ -268,12 +297,19 @@
       transform: translateY(-50%);
     }
 
-    .hero h1 {
+    .hero-name {
       font-size: clamp(2.9rem, 4vw, 3.8rem);
       line-height: 1.08;
-      margin: 0 0 0.85rem;
+      margin: 0 0 0.3rem;
       text-transform: uppercase;
       letter-spacing: 0.04em;
+    }
+
+    .hero-title {
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin: 0 0 1.4rem;
     }
 
     .hero-subtitle {
@@ -281,13 +317,31 @@
       color: var(--text-muted);
       max-width: 36rem;
       line-height: 1.7;
-      margin-bottom: 1.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero-hook {
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      max-width: 34rem;
+    }
+
+    .hero-hook span {
+      display: inline-block;
+      transition: opacity 260ms ease-out, transform 260ms ease-out;
+    }
+
+    .hero-hook span.is-exiting {
+      opacity: 0;
+      transform: translateY(-4px);
     }
 
     .hero-metrics {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.9rem;
+      margin-top: 1.2rem;
       margin-bottom: 1.8rem;
     }
 
@@ -422,8 +476,57 @@
       color: var(--text-muted);
     }
 
-    /* HERO VIDEO / MEDIA */
+    .hero-scroll-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1.4rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      opacity: 0.85;
+    }
 
+    .hero-scroll-dot {
+      width: 7px;
+      height: 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-scroll-dot::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 3px;
+      width: 3px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--teal);
+      transform: translateX(-50%);
+      animation: scrollDot 1.6s ease-in-out infinite;
+    }
+
+    @keyframes scrollDot {
+      0% {
+        transform: translate(-50%, 0);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        transform: translate(-50%, 7px);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, 10px);
+        opacity: 0;
+      }
+    }
+
+    /* HERO VIDEO / MEDIA */
     .hero-media {
       display: flex;
       justify-content: center;
@@ -631,7 +734,6 @@
     }
 
     /* HORIZONTAL PROJECT TIMELINE */
-
     .timeline-wrapper {
       position: relative;
       margin-top: 1.2rem;
@@ -694,7 +796,11 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 0 0, rgba(242, 193, 79, 0.18), transparent 60%);
+      background: radial-gradient(
+        circle at 0 0,
+        rgba(242, 193, 79, 0.18),
+        transparent 60%
+      );
       opacity: 0;
       transition: opacity 220ms ease-out;
     }
@@ -833,13 +939,25 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 10% 0%, rgba(242, 193, 79, 0.18), transparent 55%);
+      background: radial-gradient(
+        circle at 10% 0%,
+        rgba(242, 193, 79, 0.18),
+        transparent 55%
+      );
       opacity: 0;
       transition: opacity 220ms ease-out;
     }
 
     .highlight-card:hover::before {
       opacity: 1;
+    }
+
+    .highlight-tagline {
+      font-size: 0.76rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.35rem;
     }
 
     .highlight-title {
@@ -853,14 +971,6 @@
       margin-top: 0.3rem;
     }
 
-    .highlight-tagline {
-      font-size: 0.76rem;
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      margin-bottom: 0.35rem;
-    }
-
     .highlight-link {
       font-size: 0.78rem;
       margin-top: 0.5rem;
@@ -872,7 +982,6 @@
     }
 
     /* SKILLS / FILTERABLE TAGS */
-
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -989,7 +1098,6 @@
     }
 
     /* CONTACT & FEEDBACK */
-
     .contact-card {
       background: radial-gradient(circle at top, #171e31, #070915);
       border-radius: var(--radius-md);
@@ -1095,13 +1203,15 @@
   </style>
 </head>
 <body>
+  <div class="reading-progress" id="readingProgress"></div>
+
   <header class="navbar">
     <div class="navbar-inner">
       <div class="brand">
         <div class="brand-mark"><span>S</span></div>
         <div class="brand-text">
           <span class="brand-name">Saravana Devaraj</span>
-          <span class="brand-role">Release · Delivery · Scrum</span>
+          <span class="brand-role">Project Management · Release · Delivery</span>
         </div>
       </div>
       <nav class="nav-links">
@@ -1118,13 +1228,27 @@
     <section class="hero" id="top">
       <div class="hero-inner">
         <div class="hero-text">
-          <p class="hero-kicker">Release Manager · Project Manager · Scrum Master</p>
-          <h1>Driving India‑scale digital delivery</h1>
-          <p class="hero-subtitle">
-            I orchestrate releases, sprints, and stakeholder alignment for
-            platforms like Skill India Digital Hub and iGOT Karmayogi Bharat,
-            turning complex programs into predictable, low‑risk delivery.
+          <p class="hero-kicker">Professional Project Management Portfolio</p>
+
+          <h1 class="hero-name">Saravana Devaraj</h1>
+
+          <p class="hero-title">
+            Release &amp; Delivery Manager · Scrum Master · Research‑driven Project Lead
           </p>
+
+          <p class="hero-subtitle">
+            I orchestrate releases, sprints, and stakeholder alignment for India‑scale
+            platforms like Skill India Digital Hub and iGOT Karmayogi Bharat – turning
+            complex programs into predictable, low‑risk delivery with research‑backed
+            planning and governance.
+          </p>
+
+          <p class="hero-hook">
+            <span id="heroHookText">
+              I de‑risk complex releases with research‑backed planning and governance.
+            </span>
+          </p>
+
           <div class="hero-metrics">
             <div class="metric-card">
               <div class="metric-value">2M+</div>
@@ -1143,14 +1267,21 @@
               <div class="metric-label">Stakeholder satisfaction</div>
             </div>
           </div>
+
           <div class="hero-actions">
             <a href="#timeline" class="btn primary">Browse project timeline</a>
             <a href="assets/resume/Saravana%20may%2026.docx" download class="btn ghost">
               Download resume (DOCX)
             </a>
           </div>
+
           <div class="hero-meta">
-            Bangalore · Open to Release / Delivery / PM roles · Hybrid or Remote
+            Bangalore · Open to Release / Delivery / Project Management roles · Hybrid or Remote
+          </div>
+
+          <div class="hero-scroll-hint">
+            <span class="hero-scroll-dot"></span>
+            <span>Scroll to see project timeline</span>
           </div>
         </div>
 
@@ -1164,7 +1295,10 @@
                 playsinline
                 class="hero-video"
               >
-                <source src="assets/videos/WhatsApp%20Video%202026-06-10%20at%2012.14.21%20PM.mp4" type="video/mp4" />
+                <source
+                  src="assets/videos/WhatsApp%20Video%202026-06-10%20at%2012.14.21%20PM.mp4"
+                  type="video/mp4"
+                />
                 Your browser does not support the video tag.
               </video>
 
@@ -1188,19 +1322,24 @@
       <!-- HORIZONTAL TIMELINE -->
       <section id="timeline" class="section">
         <div class="section-header">
-          <h2>Project & release timeline</h2>
+          <h2>Project &amp; release timeline</h2>
           <p>
             Side‑scroll through key releases, sprint milestones, and transformation work.
           </p>
         </div>
 
         <div class="timeline-wrapper">
-          <div class="timeline-label">2019 → 2026 · Programs & roles</div>
+          <div class="timeline-label">2019 → 2026 · Programs &amp; roles</div>
           <div class="timeline-scroll">
-            <article class="timeline-card" onclick="document.getElementById('exp-igot').scrollIntoView({behavior:'smooth'})">
+            <article
+              class="timeline-card"
+              onclick="document.getElementById('exp-igot').scrollIntoView({behavior:'smooth'})"
+            >
               <div class="timeline-year">2026 – Now</div>
               <div class="timeline-title">iGOT Karmayogi Bharat</div>
-              <div class="timeline-role">Associate Project Lead · Delivery & Release</div>
+              <div class="timeline-role">
+                Associate Project Lead · Delivery &amp; Release
+              </div>
               <p class="timeline-metric">
                 35% better sprint predictability, 40% uplift in on‑time releases.
               </p>
@@ -1214,10 +1353,15 @@
               </a>
             </article>
 
-            <article class="timeline-card" onclick="document.getElementById('exp-sidh').scrollIntoView({behavior:'smooth'})">
+            <article
+              class="timeline-card"
+              onclick="document.getElementById('exp-sidh').scrollIntoView({behavior:'smooth'})"
+            >
               <div class="timeline-year">2023 – 2026</div>
               <div class="timeline-title">Skill India Digital Hub (NSDC)</div>
-              <div class="timeline-role">Senior Project Associate · Release Manager</div>
+              <div class="timeline-role">
+                Senior Project Associate · Release Manager
+              </div>
               <p class="timeline-metric">
                 2M+ DAU, 98% deployment success, 0 critical incidents.
               </p>
@@ -1231,7 +1375,10 @@
               </a>
             </article>
 
-            <article class="timeline-card" onclick="document.getElementById('exp-ola').scrollIntoView({behavior:'smooth'})">
+            <article
+              class="timeline-card"
+              onclick="document.getElementById('exp-ola').scrollIntoView({behavior:'smooth'})"
+            >
               <div class="timeline-year">2022 – 2023</div>
               <div class="timeline-title">OLA Cabs Strategic Research</div>
               <div class="timeline-role">Project Coordinator</div>
@@ -1243,10 +1390,13 @@
               </span>
             </article>
 
-            <article class="timeline-card" onclick="document.getElementById('exp-mais').scrollIntoView({behavior:'smooth'})">
+            <article
+              class="timeline-card"
+              onclick="document.getElementById('exp-mais').scrollIntoView({behavior:'smooth'})"
+            >
               <div class="timeline-year">2021 – 2022</div>
               <div class="timeline-title">SaaS Implementations</div>
-              <div class="timeline-role">Advisory & Implementation Associate</div>
+              <div class="timeline-role">Advisory &amp; Implementation Associate</div>
               <p class="timeline-metric">
                 Dashboards, training, and change management for global clients.
               </p>
@@ -1261,13 +1411,17 @@
       <!-- CASE STUDIES / HIGHLIGHTS -->
       <section id="highlights" class="section">
         <div class="section-header">
-          <h2>Story‑driven case studies</h2>
+          <h2>Research‑backed project case studies</h2>
           <p>
-            Click into projects to see problem, approach, and measurable impact.
+            Click into projects to see problem, research inputs, approach, and measurable impact.
           </p>
         </div>
+
         <div class="highlight-grid">
-          <article class="highlight-card" onclick="window.open('https://www.skillindiadigital.gov.in','_blank')">
+          <article
+            class="highlight-card"
+            onclick="window.open('https://www.skillindiadigital.gov.in','_blank')"
+          >
             <div class="highlight-tagline">National skilling platform</div>
             <div class="highlight-title">Skill India Digital Hub (NSDC)</div>
             <p>
@@ -1275,7 +1429,7 @@
               ecosystem without disrupting a 2M+ DAU learner base.
             </p>
             <p>
-              Approach: Release calendars, CCB governance, CI/CD alignment with Cloud & DevOps,
+              Approach: Release calendars, CCB governance, CI/CD alignment with Cloud &amp; DevOps,
               and strict dependency + risk tracking.
             </p>
             <p>
@@ -1294,7 +1448,10 @@
             </a>
           </article>
 
-          <article class="highlight-card" onclick="window.open('https://www.igotkarmayogi.gov.in','_blank')">
+          <article
+            class="highlight-card"
+            onclick="window.open('https://www.igotkarmayogi.gov.in','_blank')"
+          >
             <div class="highlight-tagline">Civil services upskilling</div>
             <div class="highlight-title">iGOT Karmayogi Bharat</div>
             <p>
@@ -1322,8 +1479,8 @@
           </article>
 
           <article class="highlight-card">
-            <div class="highlight-tagline">Product & research delivery</div>
-            <div class="highlight-title">OLA Cabs & SaaS programs</div>
+            <div class="highlight-tagline">Product &amp; research delivery</div>
+            <div class="highlight-title">OLA Cabs &amp; SaaS programs</div>
             <p>
               Problem: Scale pricing research and SaaS go‑lives while keeping data quality
               and adoption high.
@@ -1345,15 +1502,16 @@
       <!-- EXPERIENCE -->
       <section id="experience" class="section">
         <div class="section-header">
-          <h2>Delivery & release experience</h2>
+          <h2>Delivery &amp; release experience</h2>
           <p>
             Story‑driven roles across government platforms, national skilling, and SaaS products.
           </p>
         </div>
+
         <div class="experience-list">
           <article class="experience-item" id="exp-igot">
             <header>
-              <h3>Associate Project Lead · Delivery & Release Manager</h3>
+              <h3>Associate Project Lead · Delivery &amp; Release Manager</h3>
               <div class="experience-meta">
                 <span>Tarento Technologies · iGOT Karmayogi Bharat</span>
                 <span>Jan 2026 – Present · Bangalore</span>
@@ -1398,7 +1556,7 @@
                 calendars and CCB governance.
               </li>
               <li>
-                Partnered with Cloud & DevOps teams on AWS/Azure CI/CD
+                Partnered with Cloud &amp; DevOps teams on AWS/Azure CI/CD
                 pipelines, cutting unplanned downtime by 30%.
               </li>
               <li>
@@ -1410,7 +1568,7 @@
 
           <article class="experience-item" id="exp-ola">
             <header>
-              <h3>Project Coordinator · Research & Delivery</h3>
+              <h3>Project Coordinator · Research &amp; Delivery</h3>
               <div class="experience-meta">
                 <span>Tarento Technologies · OLA Cabs – Strategic Research</span>
                 <span>Oct 2022 – Dec 2022 · Bangalore</span>
@@ -1434,7 +1592,7 @@
 
           <article class="experience-item" id="exp-mais">
             <header>
-              <h3>Advisory & Implementation Associate</h3>
+              <h3>Advisory &amp; Implementation Associate</h3>
               <div class="experience-meta">
                 <span>Maistering B.V. · Master Collections (SaaS)</span>
                 <span>Sep 2021 – Oct 2022 · Bangalore</span>
@@ -1443,8 +1601,7 @@
             <ul>
               <li>
                 Supported SaaS implementations and go‑lives through operational
-                dashboards, training materials, and change management
-                documentation.
+                dashboards, training materials, and change management documentation.
               </li>
               <li>
                 Assisted with deployment planning, production support, and
@@ -1459,34 +1616,32 @@
         </div>
       </section>
 
-      <!-- SKILLS / FILTERABLE VIEW -->
+      <!-- SKILLS FILTERABLE VIEW -->
       <section id="skills" class="section">
         <div class="section-header">
-          <h2>Delivery, agile & tools</h2>
+          <h2>Delivery, agile &amp; tools</h2>
           <p>
-            Filterable skills across release management, agile, VAPT, and talent acquisition.
+            Filterable skills across release management, agile, VAPT, analytics, and talent acquisition.
           </p>
         </div>
+
         <div class="skills-grid">
           <div class="skills-group" data-skill-group="delivery">
-            <h3>Delivery & governance</h3>
+            <h3>Delivery governance</h3>
             <p>
-              Release Management · Delivery Governance · Change Management / CCB ·
-              Risk & RAID Log Management · Go‑Live Management · Incident Management ·
-              Production Support · Dependency Management · Budget & Billing Support
+              Release Management · Delivery Governance · Change Management · CCB · Risk &amp; RAID Logs · Go‑Live Management · Incident Management · Production Support · Dependency Management · Budget &amp; Billing Support
             </p>
             <div class="skill-tags">
               <span class="skill-tag" data-skill-filter="release">Release</span>
               <span class="skill-tag" data-skill-filter="governance">Governance</span>
-              <span class="skill-tag" data-skill-filter="incident">Incident</span>
+              <span class="skill-tag" data-skill-filter="incident">Incidents</span>
             </div>
           </div>
+
           <div class="skills-group" data-skill-group="agile">
-            <h3>Agile & project management</h3>
+            <h3>Agile project management</h3>
             <p>
-              Scrum Mastery · Sprint Planning & Execution · Capacity Planning ·
-              Resource Allocation · Stakeholder Management · Training Coordination ·
-              Documentation Management · Reporting Cadence Design
+              Scrum Mastery · Sprint Planning &amp; Execution · Capacity Planning · Resource Allocation · Stakeholder Management · Training Coordination · Documentation Management · Reporting Cadence Design
             </p>
             <div class="skill-tags">
               <span class="skill-tag" data-skill-filter="scrum">Scrum</span>
@@ -1494,12 +1649,11 @@
               <span class="skill-tag" data-skill-filter="stakeholder">Stakeholders</span>
             </div>
           </div>
+
           <div class="skills-group" data-skill-group="tools">
-            <h3>Tools & analytics</h3>
+            <h3>Tools &amp; analytics</h3>
             <p>
-              Jira Administration · Confluence · Azure DevOps · MS Excel · Power BI ·
-              CI/CD & DevOps Collaboration · Dashboard Reporting · Data‑driven
-              status storytelling
+              Jira Administration · Confluence · Azure DevOps · MS Excel · Power BI · CI/CD · DevOps Collaboration · Dashboard Reporting · Data‑driven status storytelling
             </p>
             <div class="skill-tags">
               <span class="skill-tag" data-skill-filter="jira">Jira</span>
@@ -1513,28 +1667,31 @@
       <!-- EDUCATION & AWARDS -->
       <section id="education" class="section">
         <div class="section-header">
-          <h2>Education & recognition</h2>
+          <h2>Education &amp; recognition</h2>
           <p>
-            Strong analytics foundation plus continuous learning in agile and DevOps.
+            Strong analytics foundation plus continuous learning in agile, DevOps, and delivery.
           </p>
         </div>
+
         <div class="two-col">
           <div>
             <h3>Education</h3>
             <p>
-              <strong>MBA – Business Analytics</strong><br />
+              <strong>MBA · Business Analytics</strong><br />
               MS Ramaiah University · 2021
             </p>
             <p>
-              <strong>B.E. – Mechanical / AI Engineering</strong><br />
-              NCET (VTU) · 2019
+              <strong>B.E. · Mechanical &amp; AI Engineering</strong><br />
+              NCET · VTU · 2019
             </p>
           </div>
+
           <div>
-            <h3>Certifications & awards</h3>
+            <h3>Certifications &amp; awards</h3>
             <div class="badge-list">
-              <span class="badge">PMI‑ACP (in progress)</span>
-              <span class="badge">Planning & Releasing Software with JIRA</span>
+              <span class="badge">Lean Six Sigma Yellow Belt</span>
+              <span class="badge">PMI Agile Certified Practitioner (PMI‑ACP) – In progress</span>
+              <span class="badge">Planning &amp; Releasing Software with JIRA</span>
               <span class="badge">DevOps Management Foundations</span>
               <span class="badge">Strategic Planning Foundations</span>
               <span class="badge">Synergy Award (x1)</span>
@@ -1544,46 +1701,51 @@
         </div>
       </section>
 
-      <!-- CONTACT / ABOUT / FEEDBACK -->
+      <!-- CONTACT & FEEDBACK -->
       <section id="contact" class="section">
         <div class="section-header">
-          <h2>Contact & resume</h2>
+          <h2>Contact &amp; resume</h2>
           <p>
             A quick way to reach me for roles in release, delivery, or project management.
           </p>
         </div>
+
         <div class="contact-card">
           <div class="contact-row">
             <div class="contact-label">Location</div>
             <div class="contact-value">Bangalore, India</div>
           </div>
+
           <div class="contact-row">
             <div class="contact-label">Phone</div>
-            <div class="contact-value">+91‑7019156599</div>
+            <div class="contact-value">+91 70191 56599</div>
           </div>
+
           <div class="contact-row">
             <div class="contact-label">Email</div>
             <div class="contact-value">
               <a href="mailto:sarostaying@gmail.com">sarostaying@gmail.com</a>
             </div>
           </div>
+
           <div class="contact-row">
             <div class="contact-label">LinkedIn</div>
             <div class="contact-value">
               <a
-                href="https://www.linkedin.com/in/saravana-devaraju"
+                href="https://www.linkedin.com/in/saravana-devaraj"
                 target="_blank"
                 rel="noreferrer"
               >
-                linkedin.com/in/saravana-devaraju
+                linkedin.com/in/saravana-devaraj
               </a>
             </div>
           </div>
+
           <div class="contact-row">
             <div class="contact-label">Resume</div>
             <div class="contact-value">
               <a href="assets/resume/Saravana%20may%2026.docx" download>
-                One‑click download (DOCX)
+                One‑click download DOCX
               </a>
             </div>
           </div>
@@ -1593,7 +1755,7 @@
             <a href="mailto:sarostaying@gmail.com?subject=Feedback%20on%20portfolio">
               Email your comments and suggestions
             </a>
-            and I’ll respond with a tailored delivery plan.
+            and I'll respond with a tailored delivery plan.
           </p>
         </div>
       </section>
@@ -1607,7 +1769,6 @@
   <script>
     // Scroll-in animation
     const sections = document.querySelectorAll(".section");
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -1617,14 +1778,11 @@
           }
         });
       },
-      {
-        threshold: 0.15,
-      }
+      { threshold: 0.15 }
     );
-
     sections.forEach((section) => observer.observe(section));
 
-    // Unmute video and play ONCE with sound after user interaction (autoplay policies require click)[web:17][web:34][web:40]
+    // Unmute video and play ONCE with sound after user interaction
     const introVideo = document.getElementById("introVideo");
     const unmuteBtn = document.getElementById("unmuteBtn");
     const statusText = document.getElementById("videoStatusText");
@@ -1632,28 +1790,30 @@
 
     function enableSound() {
       if (!introVideo) return;
-      introVideo.currentTime = 0; // start from beginning
+
+      introVideo.currentTime = 0;
       introVideo.muted = false;
+
       const playPromise = introVideo.play();
       if (playPromise && typeof playPromise.then === "function") {
         playPromise
           .then(() => {
             if (statusText) {
-              statusText.textContent = "Intro · Playing with sound (once)";
+              statusText.textContent = "Intro · Playing with sound once";
             }
             if (unmuteBtn) {
               unmuteBtn.classList.add("is-hidden");
             }
           })
           .catch((err) => {
-            console.warn("Video play with sound blocked:", err);
+            console.warn("Video play with sound blocked", err);
             if (statusText) {
               statusText.textContent = "Tap again to enable sound";
             }
           });
       } else {
         if (statusText) {
-          statusText.textContent = "Intro · Playing with sound (once)";
+          statusText.textContent = "Intro · Playing with sound once";
         }
         if (unmuteBtn) {
           unmuteBtn.classList.add("is-hidden");
@@ -1668,9 +1828,9 @@
       });
     }
 
-    if (heroMediaInner) {
+    if (heroMediaInner && introVideo) {
       heroMediaInner.addEventListener("click", () => {
-        if (introVideo && introVideo.muted) {
+        if (introVideo.muted) {
           enableSound();
         }
       });
@@ -1690,6 +1850,46 @@
         });
       });
     });
+
+    // Rotating hero hook line
+    const hookMessages = [
+      "I de‑risk complex releases with research‑backed planning and governance.",
+      "I connect VAPT, release gates, and DevOps so production stays boring and stable.",
+      "I turn ambiguous stakeholder asks into sprintable, measurable delivery outcomes.",
+      "I blend project management and talent acquisition to build pods that actually ship."
+    ];
+
+    const hookEl = document.getElementById("heroHookText");
+    let hookIndex = 0;
+
+    if (hookEl) {
+      setInterval(() => {
+        hookEl.classList.add("is-exiting");
+        setTimeout(() => {
+          hookIndex = (hookIndex + 1) % hookMessages.length;
+          hookEl.textContent = hookMessages[hookIndex];
+          hookEl.classList.remove("is-exiting");
+        }, 260);
+      }, 4800);
+    }
+
+    // Reading progress bar
+    const progressBar = document.getElementById("readingProgress");
+
+    if (progressBar) {
+      window.addEventListener(
+        "scroll",
+        () => {
+          const scrollTop =
+            window.scrollY || document.documentElement.scrollTop;
+          const docHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+          const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+          progressBar.style.transform = `scaleX(${progress})`;
+        },
+        { passive: true }
+      );
+    }
   </script>
 </body>
 </html>
